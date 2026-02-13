@@ -42,26 +42,3 @@ generar_reporte(metricas_LR, metricas_RF, UMBRAL_LR, UMBRAL_RF)
 
 print("Programa Terminado")
 
-
-
-#prediccion sobre dato actual
-print(f"Reporte sobre: {TICKER} en {fecha_actual}")
-datos = Get_process_data(TICKER, fecha_anterior, fecha_final)
-datos = datos.tail(1)
-
-probs_LR = LR.predict_proba(datos)[:, 1]
-print(probs_LR, "filtro para operar")
-
-probs_RF = RF.predict_proba(datos)[:, 1]
-print(probs_RF, "refinamiento")
-
-if probs_LR >= UMBRAL_LR and probs_RF >= UMBRAL_RF:
-    print(f"SEÑAL DETECTADA: OPERAR {TICKER} LONG")
-elif probs_LR >= UMBRAL_LR and probs_RF < UMBRAL_RF:
-    print(f"SEÑAL DETECTADA: OPERAR {TICKER} SHORT")
-else:
-    print("EXCESO DE RUIDO. NO OPERAR")
-
-
-
-
