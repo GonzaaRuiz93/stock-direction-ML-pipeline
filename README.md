@@ -16,6 +16,9 @@ The system is evaluated using time-series cross-validation and trading-oriented 
 
 The objective is not to maximize raw accuracy, but to design a robust and realistic trading signal framework under weak predictability conditions.
 
+This project is documented in English for international accessibility.
+Spanish version available upon request.
+
 <br>
 
 ## Modeling Philosophy

@@ -5,7 +5,7 @@ from datetime import datetime, timedelta
 from gen_reporte import generar_reporte
 from visualization import Get_comparative_figure
 
-print("Iniciando Programa")
+print("Starting Program")
 
 #Definir variables financieras
 TICKER = "AAPL"
@@ -34,11 +34,11 @@ LR, RF, metricas_LR, metricas_RF = Get_ML_Model(X, y, UMBRAL_LR, UMBRAL_RF)
 
 
 # Mostrar Metricas
-Get_comparative_figure(metricas_LR, metricas_RF, "Métricas: Solo Logistic Regresion", "Métricas: Modelo Completo (LR + RF)")
+Get_comparative_figure(metricas_LR, metricas_RF, "Metrics: Logistic Regression Only", "Metrics: Complete Model (LR + RF)")
 
 #Generar reporte
 generar_reporte(metricas_LR, metricas_RF, UMBRAL_LR, UMBRAL_RF)
 
 
-print("Programa Terminado")
+print("Program Completed")
 
