@@ -43,7 +43,6 @@ def Get_comparative_figure(data1, data2, label1="Model 1", label2="Model 2", fil
 
     plt.tight_layout()
 
-    # 🔹 Ruta profesional basada en el archivo actual
     current_dir = Path(__file__).resolve().parent
     save_path = current_dir / filename
 
