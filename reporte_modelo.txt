@@ -1,0 +1,25 @@
+
+=============================================
+REPORTE DE RENDIMIENTO - 2026-02-12 13:07:35
+=============================================
+
+--- METRICAS: Logistic Regression ---
+Umbral: 0.45
+
+precision_mean : 0.5478
+precision_std  : 0.0281
+recall_mean    : 0.9040
+trades_mean    : 112.00
+auc_mean       : 0.5330
+auc_std        : 0.0544
+
+--- METRICAS: Random Forest ---
+Umbral: 0.55
+
+precision_mean : 0.5612
+precision_std  : 0.0237
+recall_mean    : 0.4952
+trades_mean    : 53.60
+auc_mean       : 0.5230
+auc_std        : 0.0248
+
