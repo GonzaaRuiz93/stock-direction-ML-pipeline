@@ -36,8 +36,3 @@ def Get_process_data(ticker, start, end):
 def Get_target(df):
     target = (df['ret_1'].shift(-1) > 0).astype(int)
     return target
-
-
-
-#version para semanas
-#    aux = yf.download(ticker, start=start, end=end, interval="1wk", progress=False)

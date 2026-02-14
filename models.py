@@ -1,5 +1,5 @@
 
-#from gen_reporte import generar_reporte
+
 import numpy as np
 
 from sklearn.model_selection import TimeSeriesSplit
@@ -101,13 +101,7 @@ def Get_ML_Model(X, y, UMBRAL_LR, UMBRAL_RF):
                     recalls_RF.append(recalls)
                     aucs_RF.append(aucs)
                     trade_counts_RF.append(trade_counts)
-                
-                #metricas_LR = Calculate_metrics(precisions_LR, recalls_LR, aucs_LR, trade_counts_LR)
-                #metricas_RF = Calculate_metrics(precisions_RF, recalls_RF, aucs_RF, trade_counts_RF)
-                #aux += 1
-                #generar_reporte(metricas_LR, metricas_RF, UMBRAL_LR, UMBRAL_RF, aux)
-                #Get_comparative_figure(metricas_LR, metricas_RF, f"Mét_{aux}: Logistic Regresion", f"Mét_{aux}: Random Forest")
-                
+
 
     #calcular metricas
     metricas_LR = Calculate_metrics(precisions_LR, recalls_LR, aucs_LR, trade_counts_LR)
@@ -246,44 +240,5 @@ for model_name, model in models.items():
     for threshold in thresholds:
         precisions = []
         recalls = []
-        aucs = []
-        trade_counts = []
-
-        print(threshold)
-        for train_idx, test_idx in tscv.split(X):
-            X_train, X_test = X.iloc[train_idx], X.iloc[test_idx]
-            y_train, y_test = y.iloc[train_idx], y.iloc[test_idx]
-
-            model.fit(X_train, y_train)
-            probs = model.predict_proba(X_test)[:, 1]
-
-            preds = (probs >= threshold).astype(int)
-
-            # métricas
-            if preds.sum() > 0:  # evitar divisiones raras
-                precisions.append(precision_score(y_test, preds))
-                recalls.append(recall_score(y_test, preds))
-            else:
-                precisions.append(0)
-                recalls.append(0)
-
-            aucs.append(roc_auc_score(y_test, probs))
-            trade_counts.append(preds.sum())
-
-        results[model_name][threshold] = {
-            "precision_mean": np.mean(precisions),
-            "precision_std": np.std(precisions),
-            "recall_mean": np.mean(recalls),
-            "trades_mean": np.mean(trade_counts),
-            "auc_mean": np.mean(aucs),
-            "auc_std": np.std(aucs)
-        }
-        
-        print(f"precision_mean: {np.mean(precisions)}")
-        print(f"precision_std: {np.std(precisions)}")
-        print(f"recalls_mean: {np.mean(recalls)}")
-        print(f"trades_mean: {np.mean(trade_counts)}")
-        print(f"auc_mean: {np.mean(aucs)}")
-        print(f"auc_std: {np.std(aucs)}")
-        print()
+        aucs 
 """

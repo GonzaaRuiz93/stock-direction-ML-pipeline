@@ -1,6 +1,6 @@
 
 =============================================
-PERFORMANCE REPORT - 2026-02-13 19:50:22
+PERFORMANCE REPORT - 2026-02-14 01:05:48
 =============================================
 
 --- METRICS: Logistic Regression ---
@@ -20,6 +20,6 @@ precision_mean : 0.5612
 precision_std  : 0.0237
 recall_mean    : 0.4952
 trades_mean    : 53.60
-auc_mean       : 0.5230
+auc_mean       : 0.5232
 auc_std        : 0.0248
 
