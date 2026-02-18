@@ -154,3 +154,13 @@ Parameters can be adjusted inside main.py:
 - Hyperparameter optimization
 - Add multi-asset support
 - Deploy as a daily automated pipeline
+
+<br>
+
+## Disclaimer
+
+This project is for research and educational purposes only. 
+It does not constitute financial advice, investment recommendation, 
+or an offer to buy or sell any financial instrument.
+
+Trading financial markets involves risk.
